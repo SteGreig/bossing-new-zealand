@@ -1,0 +1,534 @@
+/*
+
+Stylesheet Info:   Written by Stephen Greig for use on the iProspect 'Quiz' project template
+
+---------------------------
+Contents:
+---------------------------
+(1) Generals/Defaults
+(2) Header
+(3) Main
+     - (3a) Intro box
+     - (3b) Picture Quiz
+     - (3c) Text Quiz
+(4) Footer
+(5) Score Overlay
+(6) Media Queries
+---------------------------
+
+*/
+
+
+@import "reset.css";
+
+
+/* ------------------------------------------------
+------- 1) Generals/Defaults
+------------------------------------------------ */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+
+body {
+	background-color: #6895cc;
+	background-size: cover;
+	font: 95% Arial;
+	overflow: hidden;
+}
+
+a, a img {
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+a:hover img {
+	opacity: .8;
+}
+
+img {
+	max-width: 100%;
+}
+
+.clearfix {
+	clear: both;
+	display: block;
+}
+
+small {
+	font-size: 70%;
+}
+
+.wrap {
+	float: left;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+	.wrap > * {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1200px;
+		padding: 0 20px;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+
+
+/* ------------------------------------------------
+------- 2) Header
+------------------------------------------------ */
+.header-wrap {
+	background: rgba(250, 250, 250, .8);
+}
+
+	header {
+		text-align: center;
+	}
+
+		header .social {
+			margin: 10px auto;
+			text-align: center;
+			width: 200px;
+		}
+
+			header .tweet {
+				margin: 10px 0 10px 30px;
+			}
+
+			header .gp {
+				margin: 10px 0 0 35px;
+			}
+
+			header .embed {
+				position: relative;
+			}
+
+			header .embed p {
+				font: .8em "Open Sans";
+				color: #59c11a;
+				cursor: pointer;
+				display: inline-block;
+				margin-bottom: 20px;
+				border-bottom: 1px dotted #59c11a;
+			}
+
+			header .embed p:hover {
+				opacity: .8;
+			}
+
+			header .embed textarea {
+				position: absolute;
+				top: 40px;
+				left: 50%;
+				margin-left: -160px;
+				width: 280px;
+				min-height: 125px;
+				padding: 20px;
+				border-radius: 10px;
+				border: 1px solid #ccc;
+				display: none;
+			}
+
+
+
+/* ------------------------------------------------
+------- 3) Main
+------------------------------------------------ */
+/* 3a) Intro box */
+.intro {
+	width: 84%;
+	padding: 1.6% 8% 3%;
+	background: rgba(89, 193, 36, .7);
+	color: #fff;
+	text-align: center;
+	margin: 20px 0 40px;
+	font: 1.1em/1.3em "Open Sans";
+}
+
+.intro.credits {
+	clear: both;
+	font-size: .9em;
+	padding: 2.5% 8%;
+}
+
+	.intro.credits h3 {
+		font: 1.3em "Open Sans";
+	}
+
+	.intro p {
+		margin-top: 1em;
+	}
+
+	.intro a {
+		color: #fff;
+	}
+
+/* 3b) Picture Quiz */
+.quiz-pics {
+	width: 100%;
+}
+
+	.quiz-pics figure {
+		margin: 0 auto 40px;
+		width: 100%;
+		position: relative;
+	}
+
+		.num {
+			position: absolute;
+			top: -10px;
+			left: -10px;
+			width: 43px;
+			height: 37px;
+			padding-top: 4px;
+			border-radius: 50%;
+			background: #59c11a;
+			color: #fff;
+			text-align: center;
+			font: 1.7em/1.3em "Open Sans";
+		}
+
+		.quiz-pics img {
+			border: 5px solid #fff;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+			margin-bottom: 8px;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			border-radius: 10px;
+			padding: 5px 35px 5px 10px;
+			border: 1px solid #76797d;
+			box-shadow: inset 0 0 12px rgba(0, 0, 0, .3);
+			color: #666;
+			font: 1.2em "Open Sans";
+			background: #fff;
+		}
+
+		.main input[disabled] {
+			background-color: #e8ffd4;
+			opacity: 1;
+		}
+
+		.quiz-pics input[type="text"]:nth-of-type(2) {
+			margin-top: 5px;
+		}
+
+		input[type="text"]:focus {
+			border: 1px solid #59a7fa;
+			outline: none;
+		}
+
+		input.right {
+			background: url(../images/tick.png) right no-repeat #fff;
+		}
+
+		input.wrong {
+			background: url(../images/cross.png) right no-repeat #fff;
+		}
+
+
+/* 3c) Text/Trivia Quiz */
+.quiz-text {
+	width: 100%;
+	max-width: 780px;
+	margin: 0 auto;
+}
+
+	.quiz-text > li {
+		width: 100%;
+		position: relative;
+		margin-bottom: 30px;
+	}
+
+		.quiz-text .q {
+			width: 100%;
+			padding: 20px;
+			padding-left: 55px;
+			background: rgba(206, 209, 116, .95);
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			margin-bottom: 8px;
+			color: #232323;
+			font: 1.4em "Open Sans";
+		}
+
+
+
+/* ------------------------------------------------
+------- 4) Footer
+------------------------------------------------ */
+	footer {
+		position: relative;
+		min-height: 60px;
+		display: none;
+	}
+
+	footer .lights {
+		display: none;
+	}
+
+	header .score {
+		position: fixed;
+		left: 50%;
+		bottom: 0;
+		z-index: 10;
+		color: #fff;
+		font: 1.2em "Open Sans";
+		background: #292929;
+		background: -webkit-linear-gradient(#292929, #151515);
+		background: linear-gradient(#292929, #151515);
+		padding: 10px 20px;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border: 1px solid #333;
+		border-bottom: none;
+		margin-left: -50px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, .6);
+		cursor: pointer;
+	}
+
+	header .score:hover {
+		background: -webkit-linear-gradient(#222, #111);
+		background: linear-gradient(#222, #111);
+	}
+
+		header .score .nums {
+			float: left;
+			font: 700 2.3em/1em "Open Sans";
+			margin-right: 10px;
+		}
+
+			header .score .nums .total {
+				font: .7em "Open Sans";
+			}
+
+		header .score .txt {
+			color: #777;
+			text-transform: uppercase;
+			text-align: center;
+			width: 80px;
+			float: left;
+		}
+
+			header .score .txt span {
+				font-size: .7em;
+			}
+
+
+
+/* ------------------------------------------------
+------- 5) Score Overlay
+------------------------------------------------ */
+.score-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #333;
+	background: rgba(0, 0, 0, .88);
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding-top: 100px;
+	font: 1.2em "Open Sans";
+	display: none;
+	z-index: 20;
+}
+
+	.score-overlay .score {
+		font: 700 5.5em "Open Sans";
+	}
+
+	.score-overlay .completed {
+		font: 2.5em "Open Sans";
+		display: block;
+		margin-bottom: 15px;
+	}
+
+	.score-overlay .social {
+		margin: 30px auto;
+		text-align: center;
+		width: 200px;
+	}
+
+	.score-overlay .tweet {
+		margin: 10px 0 0 30px;
+	}
+
+	.score-overlay .gp {
+		margin: 10px 0 0 35px;
+	}
+
+	.score-overlay .close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		cursor: pointer;
+	}
+
+	.score-overlay .close:hover {
+		opacity: .8;
+	}
+
+
+
+/* ------------------------------------------------
+------- 6) Media Queries
+------------------------------------------------ */
+@media screen and (min-width:366px) {
+
+	.quiz-pics figure {
+		width: 310px;
+	}
+
+}
+
+@media screen and (min-width:550px) {
+
+	body {
+		background: url(../images/body-bg.jpg) fixed no-repeat #6895cc;
+		background-size: cover;
+	}
+
+	header .logo {
+		float: left;
+	}
+
+	header .social {
+		float: right;
+		padding-top: 35px;
+		width: 230px;
+		margin: 0;
+	}
+
+		header .social > * {
+			float: right;
+		}
+
+		header .social br {
+			display: none;
+		}
+
+		header .fb-like {
+			margin-right: 20px;
+		}
+
+		header .tweet {
+			margin: 1px 0 0 0;
+		}
+
+		header .gp {
+			margin: 0;
+		}
+
+		header .embed {
+			float: right;
+			margin: 10px 40px 0 40px;
+		}
+
+			header .embed textarea {
+				right: -30px;
+				left: auto;
+			}
+
+	.quiz-pics figure {
+		width: 48.5%;
+		margin-right: 3%;
+		float: left;
+	}
+
+	.quiz-pics figure:nth-of-type(2n) { margin-right: 0; }
+
+	header .score {
+		left: auto;
+		right: 10px;
+		margin-left: auto;
+	}
+
+}
+
+@media screen and (min-width:685px) {
+
+	body {
+		padding-bottom: 70px;
+	}
+
+	header .embed {
+		float: right;
+		margin-top: 36px;
+		margin-left: 40px;
+	}
+
+		header .embed textarea {
+			right: auto;
+			left: 50%;
+		}
+
+	.quiz-pics figure {
+		width: 31.5%;
+		margin-right: 2.75%;
+		float: left;
+	}
+
+	.quiz-pics figure:nth-of-type(2n) { margin-right: 2.75%; }
+	.quiz-pics figure:nth-of-type(3n) { margin-right: 0; }
+
+	.intro {
+		font-size: 1.2em;
+	}
+
+	.footer-wrap {
+		position: fixed;
+	}
+
+}
+
+@media screen and (min-width:800px) {
+
+	.quiz-pics figure {
+		width: 23.5%;
+		margin-right: 2%;
+		float: left;
+	}
+
+	.quiz-pics figure:nth-of-type(2n) { margin-right: 2%; }
+	.quiz-pics figure:nth-of-type(3n) { margin-right: 2%; }
+	.quiz-pics figure:nth-of-type(4n) { margin-right: 0; }
+
+}
+
+@media screen and (min-width:920px) {
+
+	footer .lights {
+		float: left;
+		min-width: 500px;
+		display: block;
+	}
+
+	footer .lights.hide {
+		display: none;
+	}
+
+		.lights li {
+			width: 21px;
+			height: 21px;
+			border-radius: 50%;
+			background: #cd2928;
+			float: left;
+			margin: 20px 5px 0;
+			box-shadow: inset 1px 1px 0 #000;
+		}
+
+		.lights .y {
+			background: #6cda2a;
+		}
+
+}
